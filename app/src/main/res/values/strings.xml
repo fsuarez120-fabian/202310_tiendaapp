@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">suarez_carvajal</string>
+    <string name="txt_eliminar">Eliminar</string>
+    <string name="txt_listado">Listado de productos</string>
+    <string name="txt_detalle">Detalle Producto</string>
+    <string name="txt_agregar_producto">Agregar Producto</string>
+    <string name="contrase_a">Contraseña</string>
+</resources>
