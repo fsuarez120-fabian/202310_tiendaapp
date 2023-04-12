@@ -5,4 +5,5 @@
     <string name="txt_detalle">Detalle Producto</string>
     <string name="txt_agregar_producto">Agregar Producto</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="txt_iniciar_sesion">Iniciar Sesion</string>
 </resources>

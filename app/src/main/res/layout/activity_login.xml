@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/et_user_login"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/et_user_contrasena"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -60,7 +60,7 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/et_user_login" />
 
         <Button
             android:id="@+id/button2"
@@ -68,10 +68,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:background="@drawable/shape_btn_login"
-            android:text="Button"
+            android:onClick="clickIniciarSesion"
+            android:text="@string/txt_iniciar_sesion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/et_user_contrasena" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
