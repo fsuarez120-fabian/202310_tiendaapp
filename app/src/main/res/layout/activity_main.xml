@@ -25,6 +25,7 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="8dp"
             android:text="@string/txt_agregar_producto"
+            android:onClick="clickAgregarProducto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
