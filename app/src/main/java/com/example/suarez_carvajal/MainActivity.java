@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Producto miProducto, int posicion) {
 
-                Intent intent  = new Intent(MainActivity.this, DetalleActivity.class);
-                intent.putExtra("producto",miProducto);
+                Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
+                intent.putExtra("producto", miProducto);
                 startActivity(intent);
             }
 
@@ -81,16 +81,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void clickCerrarSesion(View view){
+    public void clickCerrarSesion(View view) {
 
-        SharedPreferences miPreferencias = getSharedPreferences("tienda_app",MODE_PRIVATE);
+        SharedPreferences miPreferencias = getSharedPreferences("tienda_app", MODE_PRIVATE);
         SharedPreferences.Editor myEditor = miPreferencias.edit();
         myEditor.clear();
         myEditor.apply();
 
-        startActivity(new Intent(this,LoginActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
 
+
+    public void clickAgregarProducto(View view) {
+        startActivity(new Intent(this, FormularioActivity.class));
     }
 
 

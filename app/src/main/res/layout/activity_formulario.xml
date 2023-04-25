@@ -70,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/shape_btn_round"
+            android:onClick="clickGuardar"
             android:text="Guardar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
