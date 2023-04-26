@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -126,10 +127,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickCerrarSesion(View view) {
 
-        SharedPreferences miPreferencias = getSharedPreferences("tienda_app", MODE_PRIVATE);
+        /*SharedPreferences miPreferencias = getSharedPreferences("tienda_app", MODE_PRIVATE);
         SharedPreferences.Editor myEditor = miPreferencias.edit();
         myEditor.clear();
-        myEditor.apply();
+        myEditor.apply();*/
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.signOut();
 
         startActivity(new Intent(this, LoginActivity.class));
         finish();
