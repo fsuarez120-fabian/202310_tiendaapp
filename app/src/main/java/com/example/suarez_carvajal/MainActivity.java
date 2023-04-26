@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemBtnEliminaClick(Producto miProducto, int posicion) {
+
+                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+                firestore.collection("productos").document(miProducto.getKey()).delete();
+
                 listaPrincipalProductos.remove(posicion);
                 miAdaptador.setListadoInfomacion(listaPrincipalProductos);
             }
@@ -77,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     for (DocumentSnapshot myDocumento : task.getResult()){
                         Producto myProduct = myDocumento.toObject(Producto.class);
+                        myProduct.setKey(myDocumento.getId());
                         listaPrincipalProductos.add(myProduct);
                     }
                     miAdaptador.setListadoInfomacion(listaPrincipalProductos);

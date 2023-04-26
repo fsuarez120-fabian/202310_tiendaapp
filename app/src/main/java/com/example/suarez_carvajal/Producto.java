@@ -1,16 +1,22 @@
 package com.example.suarez_carvajal;
 
+import com.google.firebase.firestore.Exclude;
 import com.google.firebase.firestore.PropertyName;
 
 import java.io.Serializable;
 
 public class Producto implements Serializable {
+
+    private String key;
     private String nombre;
+
+
     private Double precio;
     private String urlImagen;
 
     //para conectar Firebase se debe tener un constructor vacio y los gettes y setters
-    public Producto(){}
+    public Producto() {
+    }
 
     public Producto(String nombre, Double precio, String urlImagen) {
         this.nombre = nombre;
@@ -19,23 +25,37 @@ public class Producto implements Serializable {
     }
 
     //@Exclude es para ignorar en Firebase pero debe ser en los getters y setter
+    @Exclude
+    public String getKey() {
+        return key;
+    }
+
+    @Exclude
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public Double getPrecio() {
         return precio;
     }
+
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
+
     @PropertyName("url_imagen")
     public String getUrlImagen() {
         return urlImagen;
     }
+
     @PropertyName("url_imagen")
     public void setUrlImagen(String urlImagen) {
         this.urlImagen = urlImagen;
