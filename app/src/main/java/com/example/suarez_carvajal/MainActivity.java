@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        listaPrincipalProductos.clear();
         cargarDatos();
     }
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isComplete()){
-                    listaPrincipalProductos.clear();
+
                     for (DocumentSnapshot myDocumento : task.getResult()){
                         Producto myProduct = myDocumento.toObject(Producto.class);
                         listaPrincipalProductos.add(myProduct);
