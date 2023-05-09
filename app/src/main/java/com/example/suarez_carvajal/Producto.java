@@ -1,12 +1,14 @@
 package com.example.suarez_carvajal;
 
 import com.google.firebase.firestore.PropertyName;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 public class Producto implements Serializable {
     private String nombre;
     private Double precio;
+    @SerializedName("url_imagen")
     private String urlImagen;
 
     //para conectar Firebase se debe tener un constructor vacio y los gettes y setters

@@ -10,6 +10,11 @@ import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class FormularioActivity extends AppCompatActivity {
 
     EditText etNombre, etPrecio, etUrlImagen;
@@ -36,7 +41,24 @@ public class FormularioActivity extends AppCompatActivity {
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         firestore.collection("productos").add(newProduct);
 
+        //guardarlo en RealTime
+        Retrofit myRetrofit = TiendaAppService.obtenerInstancia();
+        ProductoAPI myProductoAPI = myRetrofit.create(ProductoAPI.class);
+        myProductoAPI.agregar(newProduct).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                Toast.makeText(FormularioActivity.this, "SE GUARDO EL PRODUCTO EN FIREBASE", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+
+            }
+        });
+
+
+
         finish();
-        Toast.makeText(this, "SE GUARDO EL PRODUCTO", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "SE GUARDO EL PRODUCTO EN FIREBASE", Toast.LENGTH_SHORT).show();
     }
 }
